@@ -11,7 +11,7 @@ export declare const GATEWAY_OP_CODES: {
     HELLO: 10;
     HEARTBEAT_ACK: 11;
 };
-export declare const GATEWAY_VERSION = 8;
+export declare const GATEWAY_VERSION = 9;
 declare const _default: {
     GATEWAY_OP_CODES: {
         DISPATCH: 0;

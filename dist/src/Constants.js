@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GATEWAY_VERSION = exports.GATEWAY_OP_CODES = void 0;
 const DISPATCH = 0;
 const HEARTBEAT = 1;
 const IDENTIFY = 2;
@@ -25,5 +24,5 @@ exports.GATEWAY_OP_CODES = {
     HELLO,
     HEARTBEAT_ACK
 };
-exports.GATEWAY_VERSION = 8;
+exports.GATEWAY_VERSION = 9;
 exports.default = { GATEWAY_OP_CODES: exports.GATEWAY_OP_CODES, GATEWAY_VERSION: exports.GATEWAY_VERSION };

@@ -22,7 +22,7 @@ const non_privileged = all & ~privileged;
 function resolve(bit = 0) {
     if (typeof bit === "number" && bit >= 0)
         return bit;
-    if (typeof bit === "string")
+    if (typeof bit === "string" && flags[bit])
         return flags[bit] | 0;
     if (Array.isArray(bit))
         return bit.map((p) => resolve(p)).reduce((prev, p) => prev | p, 0);
