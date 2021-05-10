@@ -1,3 +1,7 @@
+/**
+ * Resolves bitfields to their numeric form.
+ * @param bit bit(s) to resolve.
+ */
 declare function resolve(bit?: import("./Types").IntentResolvable): number;
 declare const _default: {
     flags: {

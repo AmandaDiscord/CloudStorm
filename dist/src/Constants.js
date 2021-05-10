@@ -1,28 +1,50 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const DISPATCH = 0;
-const HEARTBEAT = 1;
-const IDENTIFY = 2;
-const PRESENCE_UPDATE = 3;
-const VOICE_STATE_UPDATE = 4;
-const RESUME = 6;
-const RECONNECT = 7;
-const REQUEST_GUILD_MEMBERS = 8;
-const INVALID_SESSION = 9;
-const HELLO = 10;
-const HEARTBEAT_ACK = 11;
 exports.GATEWAY_OP_CODES = {
-    DISPATCH,
-    HEARTBEAT,
-    IDENTIFY,
-    PRESENCE_UPDATE,
-    VOICE_STATE_UPDATE,
-    RESUME,
-    RECONNECT,
-    REQUEST_GUILD_MEMBERS,
-    INVALID_SESSION,
-    HELLO,
-    HEARTBEAT_ACK
+    /**
+     * Receive.
+     */
+    DISPATCH: 0,
+    /**
+     * Send/Receive.
+     */
+    HEARTBEAT: 1,
+    /**
+     * Send.
+     */
+    IDENTIFY: 2,
+    /**
+     * Send.
+     */
+    PRESENCE_UPDATE: 3,
+    /**
+     * Send.
+     */
+    VOICE_STATE_UPDATE: 4,
+    /**
+     * Send.
+     */
+    RESUME: 6,
+    /**
+     * Receive.
+     */
+    RECONNECT: 7,
+    /**
+     * Send.
+     */
+    REQUEST_GUILD_MEMBERS: 8,
+    /**
+     * Receive.
+     */
+    INVALID_SESSION: 9,
+    /**
+     * Receive.
+     */
+    HELLO: 10,
+    /**
+     * Receive.
+     */
+    HEARTBEAT_ACK: 11
 };
 exports.GATEWAY_VERSION = 9;
 exports.default = { GATEWAY_OP_CODES: exports.GATEWAY_OP_CODES, GATEWAY_VERSION: exports.GATEWAY_VERSION };

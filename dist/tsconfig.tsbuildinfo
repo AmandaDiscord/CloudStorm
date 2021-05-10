@@ -150,8 +150,8 @@
         "signature": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255"
       },
       "../src/constants.ts": {
-        "version": "0f810ec62f58892ab2f831b46d6343ce596d21567dbea08beff55becfb6ed6f4",
-        "signature": "57120d730a48855884799409403f2b2a20a037643246a56f4ff656ecc0bcf239"
+        "version": "e523fcce6b0a78030a9402c4aefb6f5b4c2ec318801bd2fd6d52338f7e8d4c06",
+        "signature": "f6ae521269095b6388e20199bb34407d550f38c1df5e82110a89afc713f852d6"
       },
       "../node_modules/@types/node/assert/strict.d.ts": {
         "version": "c7bdc99177a2a94d25fb13722adaaf5b3291bf70b4d1b27584ba189dd3889ba3",
@@ -427,7 +427,7 @@
       },
       "../src/structures/ratelimitbucket.ts": {
         "version": "b8fd77ebdb9cd8e90464d3ff4c7387a65bae8c9a57cf3e8a18be1793e9b2a22c",
-        "signature": "5f3c0fff298b8112032ac77b072bfd1aba3e287ef66264ec9b87e4e2868a0978"
+        "signature": "7ea44f40640fd70047cc2a687b74695f9af69510496d44fe1cbd970c711d3326"
       },
       "../src/types.ts": {
         "version": "b59e800a6d3d3be388565e1eb82857dcae27f4a49caa30464cb0453ddb991a51",
@@ -438,32 +438,32 @@
         "signature": "1b953b8e1f90c4f33ebd12053a991809339dd22de930a7224899c88f029a3bc1"
       },
       "../src/structures/betterws.ts": {
-        "version": "b8888e0a41d2448cdd9577ff140e1130a42f0affd85db120bd96d4ed4fb195fa",
-        "signature": "cd0984a8255c9a24532f05ab040b06b98c3534430b8616809971fe814d325f88"
+        "version": "d6dc8a13557620b0184446a3c2f72d51b97d970fd277bc4670dfa89d97a27a17",
+        "signature": "a059943c326e8438846ab3e47d4e3b8c92ddccdd179c9d1e14f83eb793016a1e"
       },
       "../src/intents.ts": {
         "version": "0ff2bf77dcdf46d3b4fcf8b6ae525c92cb0b570efd90c8c3c94feb8e3ce4f8d7",
-        "signature": "9803e718800b83ff4e45a109516fbb0f69ae1f5a6dd48814d97d5e979a0230cd"
+        "signature": "965b3c09b1ef5c8b73195a344bff646626c157d822c89e47f575111ba8a45088"
       },
       "../src/connector/discordconnector.ts": {
-        "version": "609586b6151737ccc087d03ad3145ec8051e7e8d6aa8429dfc6fe2583953c271",
-        "signature": "670d9bd02235a5de91f3831d4a41a54705bdb417a4afd8ccc54bc936b3f37a54"
+        "version": "0c9b227f79595e7a50a4f33dab76ea9e52f5df808989ab69923154a74bd3b2b0",
+        "signature": "7b4946dd2874c19afa796ff883c54bb5c2c54aaa68953fc04dbe74721831d1f1"
       },
       "../src/shard.ts": {
-        "version": "76fd9ae217b489e59c75937e296a7ee97bac73a71bd31e5a95a8ab131b8c557a",
-        "signature": "fce106c5a44b8c8a9959aa8db888b584a946f951508775f58179044435891946"
+        "version": "e24cf07c4f700a2714a2eaedd25b94b6a115d403c3612f6d19f314c1a55638ed",
+        "signature": "9fc7eff33859a8508a5b2325847c3e527490193947ce58df0b10d448d358c2f1"
       },
       "../src/shardmanager.ts": {
-        "version": "6371f6ecf38bd6cf4ee38bcb90bf528fa24876f18e6604188e4ffd643f55cec2",
-        "signature": "f6e0f25063c02a638159b50d21e0d0ad139d894516deffca0b5972c73a86e712"
+        "version": "81e46382a62453572770e8eadb9e4fd6a91b4a287cce4be9d3c7b2a7f90a94af",
+        "signature": "c7b681b5a4a187a64f117ca5a466ba402e645e390e55ba37ce72c40b80433ac2"
       },
       "../package.json": {
         "version": "ee0306dc356313e6590251467313066844ea0bbba8887c1151ced09279d38022",
         "signature": "6d6067299647e344ff421762429f2bff45b25082bbd977fcbe327e7107e09282"
       },
       "../src/client.ts": {
-        "version": "9dc5f91a689e896ed19298a56fe8d2b1629cf67e046cb0415241c8a75085382c",
-        "signature": "8cfe0781562bb02ab682203762700e0ae279ff8dc4990c157d54b88614aa92c5"
+        "version": "0364c4e5f9fa58184c3ace0d6cb4580d4fa59140a72aa760a16e9acd731f1393",
+        "signature": "9b4c3859accd42e91c5945eefd951631e7132fbe0f4ee73a70bee0d7c5f00465"
       }
     },
     "options": {
@@ -484,7 +484,7 @@
       "noUnusedLocals": false,
       "outDir": "./",
       "pretty": true,
-      "removeComments": true,
+      "removeComments": false,
       "resolveJsonModule": true,
       "sourceMap": false,
       "strictFunctionTypes": true,
@@ -1200,9 +1200,9 @@
       ],
       "../src/structures/betterws.ts": [
         "../node_modules/@types/ws/index.d.ts",
+        "../src/types.ts",
         "../src/structures/ratelimitbucket.ts",
         "../node_modules/zlib-sync/index.d.ts",
-        "../src/types.ts",
         "../node_modules/@types/node/events.d.ts"
       ],
       "../src/intents.ts": [
@@ -1228,7 +1228,6 @@
       "../src/client.ts": [
         "../src/types.ts",
         "../src/shardmanager.ts",
-        "../src/constants.ts",
         "../node_modules/@types/node/events.d.ts"
       ]
     },
@@ -1344,11 +1343,11 @@
       "../node_modules/erlpack/js/index.d.ts",
       "../src/structures/betterws.ts",
       "../src/intents.ts",
-      "../src/connector/discordconnector.ts",
+      "../package.json",
       "../src/shard.ts",
       "../src/shardmanager.ts",
-      "../src/client.ts",
-      "../package.json"
+      "../src/connector/discordconnector.ts",
+      "../src/client.ts"
     ]
   },
   "version": "3.7.4"
