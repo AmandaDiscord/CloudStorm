@@ -261,22 +261,26 @@ class DiscordConnector extends events_1.EventEmitter {
         // force identify if the session is marked as invalid.
         if (code === 4009) {
             this.emit("error", "Session timed out.");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Rate limited.
         if (code === 4008) {
             this.emit("error", "You are being rate limited. Wait before sending more packets.");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Invalid sequence.
         if (code === 4007) {
             this.emit("error", "Invalid sequence. Reconnecting and starting a new session.");
-            this._reconnect();
+            this.reset();
+            this.connect();
         }
         // Already authenticated.
         if (code === 4005) {
             this.emit("error", "You sent more than one OP 2 IDENTIFY payload while the websocket was open.");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Authentication failed.
         if (code === 4004) {
@@ -285,22 +289,26 @@ class DiscordConnector extends events_1.EventEmitter {
         // Not authenticated.
         if (code === 4003) {
             this.emit("error", "You tried to send a packet before sending an OP 2 IDENTIFY or OP 6 RESUME.");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Decode error.
         if (code === 4002) {
             this.emit("error", "You sent an invalid payload");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Invalid opcode.
         if (code === 4001) {
             this.emit("error", "You sent an invalid opcode or invalid payload for an opcode");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Generic error.
         if (code === 4000) {
             this.emit("error", "Error code 4000 received. Attempting to resume");
-            this._reconnect(true);
+            this.clearHeartBeat();
+            this.connect();
         }
         // Don't try to reconnect when true
         if (code === 1000 && reason === "Disconnected by User") {
