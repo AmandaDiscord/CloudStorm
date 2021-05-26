@@ -446,7 +446,7 @@
         "signature": "965b3c09b1ef5c8b73195a344bff646626c157d822c89e47f575111ba8a45088"
       },
       "../src/connector/discordconnector.ts": {
-        "version": "30334d7ab71d4bac5c9b9051249754858221c41acd682aeaf420273b008d17e9",
+        "version": "9d5ed4dbe6ec73c2f068f4bbbaeae715eb1011d6f8c662c058da1c5cc84bba07",
         "signature": "7b4946dd2874c19afa796ff883c54bb5c2c54aaa68953fc04dbe74721831d1f1"
       },
       "../src/shard.ts": {
@@ -458,7 +458,7 @@
         "signature": "c7b681b5a4a187a64f117ca5a466ba402e645e390e55ba37ce72c40b80433ac2"
       },
       "../package.json": {
-        "version": "ee0306dc356313e6590251467313066844ea0bbba8887c1151ced09279d38022",
+        "version": "4290c2ce4a28c7819291502284bcc828c5ae30df5e93a5785302f973d6540e93",
         "signature": "6d6067299647e344ff421762429f2bff45b25082bbd977fcbe327e7107e09282"
       },
       "../src/client.ts": {
