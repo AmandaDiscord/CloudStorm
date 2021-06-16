@@ -438,11 +438,11 @@
         "signature": "1b953b8e1f90c4f33ebd12053a991809339dd22de930a7224899c88f029a3bc1"
       },
       "../src/structures/betterws.ts": {
-        "version": "d6dc8a13557620b0184446a3c2f72d51b97d970fd277bc4670dfa89d97a27a17",
+        "version": "ff8a3010b7ae1938c88c0480be911d2e26efd8abe487080eb30c5ca4f458e274",
         "signature": "a059943c326e8438846ab3e47d4e3b8c92ddccdd179c9d1e14f83eb793016a1e"
       },
       "../src/intents.ts": {
-        "version": "0ff2bf77dcdf46d3b4fcf8b6ae525c92cb0b570efd90c8c3c94feb8e3ce4f8d7",
+        "version": "b90032afe389638a742baee28cd9ca40833d2559ba635f4c675994f7088f38ef",
         "signature": "965b3c09b1ef5c8b73195a344bff646626c157d822c89e47f575111ba8a45088"
       },
       "../src/connector/discordconnector.ts": {

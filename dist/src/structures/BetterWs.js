@@ -113,6 +113,8 @@ class BetterWs extends events_1.EventEmitter {
      * @param data Data to send.
      */
     sendMessage(data) {
+        if (this.ws.readyState !== 1)
+            return Promise.reject(new Error("WS is not open"));
         this.emit("debug_send", data);
         return new Promise((res, rej) => {
             const presence = data.op === Constants_1.GATEWAY_OP_CODES.PRESENCE_UPDATE;
@@ -153,6 +155,8 @@ class BetterWs extends events_1.EventEmitter {
      * @param reason Reason of the disconnect.
      */
     close(code = 1000, reason = "Unknown") {
+        if (this.ws.readyState === 2 || this.ws.readyState === 3)
+            return Promise.reject(new Error("WS is already closing or is closed"));
         return new Promise((res, rej) => {
             const timeout = setTimeout(() => {
                 return rej("Websocket not closed within 5 seconds");

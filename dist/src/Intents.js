@@ -60,8 +60,7 @@ function resolve(bit = 0) {
     // @ts-ignore
     if (Array.isArray(bit))
         return bit.map((p) => resolve(p)).reduce((prev, p) => prev | p, 0);
-    const error = new RangeError("BITFIELD_INVALID");
-    throw error;
+    throw new RangeError("BITFIELD_INVALID");
 }
 module.exports = {
     flags,
