@@ -137,10 +137,18 @@ class DiscordConnector extends events_1.EventEmitter {
      * @param resume Whether or not the client intends to send an OP 6 RESUME later.
      */
     async _reconnect(resume = false) {
-        var _a;
+        var _a, _b, _c;
         if (resume)
             reconnecting = true;
-        await ((_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.close(resume ? 4000 : 1012, "reconnecting"));
+        if (((_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.ws.readyState) === ws_1.default.CONNECTING) {
+            this.emit("error", `Client was attempting to ${resume ? "resume" : "reconnect"} while the WebSocket was still in the connecting state. This should never happen.${this.options.reconnect ? " Restarting the connect loop." : ""}`);
+            this.reset();
+            if (this.options.reconnect)
+                this.connect();
+        }
+        // This is for instances where the gateway asks the client to reconnect. The ws would be closed by the time the code reaches here.
+        if (((_b = this.betterWs) === null || _b === void 0 ? void 0 : _b.ws.readyState) === ws_1.default.OPEN)
+            await ((_c = this.betterWs) === null || _c === void 0 ? void 0 : _c.close(resume ? 4000 : 1012, "reconnecting"));
         if (resume) {
             this.clearHeartBeat();
         }
