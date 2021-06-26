@@ -6,6 +6,7 @@ const events_1 = require("events");
 const BetterWs_1 = __importDefault(require("../structures/BetterWs"));
 const Constants_1 = require("../Constants");
 const Intents_1 = __importDefault(require("../Intents"));
+let reconnecting = false;
 /**
  * Class used for acting based on received events.
  *
@@ -47,6 +48,7 @@ class DiscordConnector extends events_1.EventEmitter {
         }
         this.betterWs.on("ws_open", () => {
             this.status = "connecting";
+            reconnecting = false;
         });
         this.betterWs.on("ws_message", msg => this.messageAction(msg));
         this.betterWs.on("ws_close", (code, reason) => this.handleWsClose(code, reason));
@@ -135,6 +137,8 @@ class DiscordConnector extends events_1.EventEmitter {
      */
     async _reconnect(resume = false) {
         var _a;
+        if (resume)
+            reconnecting = true;
         await ((_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.close(resume ? 4000 : 1012, "reconnecting"));
         if (resume) {
             this.clearHeartBeat();
@@ -204,8 +208,10 @@ class DiscordConnector extends events_1.EventEmitter {
      * Send an OP 1 HEARTBEAT to the gateway.
      */
     heartbeat() {
-        var _a;
-        (_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.sendMessage({ op: Constants_1.GATEWAY_OP_CODES.HEARTBEAT, d: this.seq });
+        var _a, _b;
+        if (((_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.ws.readyState) !== WebSocket.OPEN)
+            return;
+        (_b = this.betterWs) === null || _b === void 0 ? void 0 : _b.sendMessage({ op: Constants_1.GATEWAY_OP_CODES.HEARTBEAT, d: this.seq });
         this.lastHeartbeatSend = Date.now();
     }
     /**
@@ -306,7 +312,7 @@ class DiscordConnector extends events_1.EventEmitter {
         }
         // Generic error / safe self closing code.
         if (code === 4000) {
-            if (reason === "reconnecting") {
+            if (reconnecting) {
                 gracefulClose = true;
             }
             else {
