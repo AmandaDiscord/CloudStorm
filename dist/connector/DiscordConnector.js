@@ -6,6 +6,7 @@ const events_1 = require("events");
 const BetterWs_1 = __importDefault(require("../structures/BetterWs"));
 const Constants_1 = require("../Constants");
 const Intents_1 = __importDefault(require("../Intents"));
+const ws_1 = __importDefault(require("ws"));
 let reconnecting = false;
 /**
  * Class used for acting based on received events.
@@ -209,7 +210,7 @@ class DiscordConnector extends events_1.EventEmitter {
      */
     heartbeat() {
         var _a, _b;
-        if (((_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.ws.readyState) !== WebSocket.OPEN)
+        if (((_a = this.betterWs) === null || _a === void 0 ? void 0 : _a.ws.readyState) !== ws_1.default.OPEN)
             return;
         (_b = this.betterWs) === null || _b === void 0 ? void 0 : _b.sendMessage({ op: Constants_1.GATEWAY_OP_CODES.HEARTBEAT, d: this.seq });
         this.lastHeartbeatSend = Date.now();
