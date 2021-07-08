@@ -28,7 +28,5 @@
   "optionalDependencies": {
     "erlpack": "github:discordapp/erlpack"
   },
-  "files": [
-    "./dist"
-  ]
+  "files": ["dist"]
 }
